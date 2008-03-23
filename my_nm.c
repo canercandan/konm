@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 22 11:26:54 2008 caner candan
-** Last update Sun Mar 23 17:22:07 2008 caner candan
+** Last update Sun Mar 23 18:13:45 2008 caner candan
 */
 
 #include "my_nm.h"
@@ -20,7 +20,8 @@ int		main(int ac, char **av)
   Elf32_Ehdr	*elf;
   Elf32_Phdr	*prg;
   Elf32_Shdr	*sct;
-  Elf32_Shdr	*strtab;
+  char		*strtab;
+  char		*symtab;
   int		i;
 
   if (ac < 2)
@@ -30,8 +31,10 @@ int		main(int ac, char **av)
   file_type(buf);
   elf = buf;
   printf("entry: %08x\n", elf->e_entry);
-  strtab = buf + elf->e_shoff + (elf->e_shentsize * 29);
-  printf("type: %d\n", strtab->sh_type);
+  sct = buf + elf->e_shoff + (elf->e_shentsize * elf->e_shstrndx);
+  strtab = buf + sct->sh_offset;
+  symtab = sct_get(buf, SHT_SYMTAB);
+  printf("strtab: %s\n", strtab + 1);
   printf("prg addr: %08x, size: %d, num: %d\n",
 	 elf->e_phoff, elf->e_phentsize, elf->e_phnum);
   if (elf->e_phoff)
@@ -53,9 +56,11 @@ int		main(int ac, char **av)
       while (i < elf->e_shnum)
 	{
 	  sct = buf + elf->e_shoff + (elf->e_shentsize * i);
-	  printf("name: %s, type: %d, offset: %08x\n",
-		 strtab + sct->sh_name,
-		 sct->sh_type, sct->sh_offset);
+	  if (sct->sh_type != SHT_NULL)
+	    {
+	      printf("name: %s, type: %d, offset: %08x\n",
+		     strtab + sct->sh_name, sct->sh_type, sct->sh_offset);
+	    }
 	  i++;
 	}
     }
