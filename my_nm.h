@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 22 11:29:44 2008 caner candan
-** Last update Sun Mar 23 16:17:23 2008 caner candan
+** Last update Sun Mar 23 18:38:43 2008 caner candan
 */
 
 #ifndef __NM_H__
@@ -22,6 +22,6 @@ void	file_close(int fd);
 void	*file_init(int fd, int length);
 void	file_free(void *buf, int length);
 void	file_type(void *buf);
-void	*sct_get(void *buf, int type);
+void	*sct_get(void *buf, unsigned int type);
 
 #endif /* !__NM_H__ */
