@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sun Mar 23 13:25:37 2008 caner candan
-** Last update Sat Mar 29 21:57:47 2008 caner candan
+** Last update Sat Mar 29 22:58:09 2008 caner candan
 */
 
 #include "nm-objdump.h"
@@ -23,7 +23,7 @@ int		file_open(char *file, int *length, char *name)
   if ((fd = open(file, O_RDONLY)) < 0)
     {
       fprintf(stderr, NOFILE, name, file);
-      exit(-1);
+      return (0);
     }
   fstat(fd, &s);
   *length = s.st_size;

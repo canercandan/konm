@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 29 21:30:56 2008 caner candan
-** Last update Sat Mar 29 22:49:16 2008 caner candan
+** Last update Sat Mar 29 22:58:58 2008 caner candan
 */
 
 #include "nm-objdump.h"
@@ -24,7 +24,8 @@ int	main(int ac, char **av)
     {
       if (ac >= 2)
 	file = av[i];
-      fd = file_open(file, &length, NAME_NM);
+      if (!(fd = file_open(file, &length, NAME_NM)))
+	continue;
       buf = file_init(fd, length);
       if (file_elf(buf, file, NAME_NM))
 	{

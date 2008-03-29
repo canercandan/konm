@@ -5,10 +5,11 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Thu Mar 27 11:13:24 2008 caner candan
-** Last update Sat Mar 29 22:52:20 2008 caner candan
+** Last update Sat Mar 29 23:00:30 2008 caner candan
 */
 
 #include "nm-objdump.h"
+#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -23,10 +24,14 @@ int	main(int ac, char **av)
     {
       if (ac >= 2)
 	file = av[i];
-      fd = file_open(file, &length, NAME_OD);
+      if (!(fd = file_open(file, &length, NAME_OD)))
+	continue;
       buf = file_init(fd, length);
       if (file_elf(buf, file, NAME_OD))
 	{
+	  if (ac > 2)
+	    printf(DUMP_NAME, file);
+	  dump_scn(buf);
 	}
       file_free(buf, length);
       file_close(fd);
