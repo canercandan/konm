@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 22 11:29:44 2008 caner candan
-** Last update Sat Mar 29 22:00:57 2008 caner candan
+** Last update Sat Mar 29 22:21:39 2008 caner candan
 */
 
 #ifndef __NM_OBJDUMP_H__
@@ -13,6 +13,8 @@
 
 # define NAME_NM	"nm"
 # define NAME_OD	"objdump"
+
+# define DUMP_NAME	"\n%s:\n"
 
 # define ERRMSG		"Error: %s\n"
 # define ERRFILE	"%s: %s: File format not recognized\n"
@@ -27,7 +29,7 @@ void	file_close(int fd);
 void	*file_init(int fd, int length);
 void	file_free(void *buf, int length);
 void	file_type(void *buf);
-void	file_elf(void *buf, char *file, char *name);
+int	file_elf(void *buf, char *file, char *name);
 void	*scn_get(void *buf, unsigned int type, int pos);
 int	dump_scn(void *buf);
 int	dump_sym(void *buf);
