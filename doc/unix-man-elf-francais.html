@@ -1,0 +1,1518 @@
+<html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Bash SHELL - Man elf en français</title>
+
+<script language="javascript" type="text/javascript" src="unix-man-elf-francais_files/prototype.js"></script>
+<script language="javascript" type="text/javascript" src="unix-man-elf-francais_files/scriptaculous.js"></script><script type="text/javascript" src="unix-man-elf-francais_files/builder.js"></script><script type="text/javascript" src="unix-man-elf-francais_files/effects.js"></script><script type="text/javascript" src="unix-man-elf-francais_files/dragdrop.js"></script><script type="text/javascript" src="unix-man-elf-francais_files/controls.js"></script><script type="text/javascript" src="unix-man-elf-francais_files/slider.js"></script>
+<script language="javascript" type="text/javascript" src="unix-man-elf-francais_files/functions_fr.js"></script>
+<script language="javascript" type="text/javascript" src="unix-man-elf-francais_files/functions.js"></script>
+
+<style>
+a:link		{ color:#000000; text-decoration: none }
+a:visited	{ color:#000000; text-decoration: none }
+a:active	{ color:#000000; text-decoration: none }
+a:hover		{ color:#000000; text-decoration: underline }
+
+td {
+	font-size:12px;
+	font-family:arial;
+	color:#000000;
+	}
+
+
+.commande {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight:bold;
+}
+.comm_input	{
+	border-right:#606879 1px solid;
+	border-top:#606879 1px solid;
+	border-left: #606879 1px solid;
+	border-bottom: #606879 1px solid;
+	width: 250px;
+	color: #000000;
+	font-size: 10px;
+	background-color:#DEE2EA;
+}
+.logins_input	{
+	border-right:#FFBF41 1px solid;
+	border-top:#FFBF41 1px solid;
+	border-left:#FFBF41  1px solid;
+	border-bottom:#FFBF41  1px solid;
+	width: 130px;
+	color: #000000;
+	font-size: 10px;
+	background-color:#ffffff;
+}
+
+.titre {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #cc0000;
+	font-weight:bold;
+	font-style:italic;
+}
+
+.menu_top {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	font-weight:bold;
+}
+.menu_left {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+
+.commande {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight:bold;
+}
+
+.titre_pages_speciales{
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #000000;
+	font-weight:bold;
+	font-style:normal;
+
+}
+
+form{
+
+	margin-top:0;
+	margin-bottom:0;
+
+}
+
+.titre_commun_base{
+ font-family:arial;
+ color:#cc0000;
+ font-size:20px;
+}
+</style><style>
+h1{font-size:12px;font-weight:bold;color:#234A76;margin: 0px; padding: 0px; }
+.h1 h1{background-color:#5A89C0;width:90%;margin: 5px; padding: 5px;border-color:#FFFFFF; border-width:1px; border-style:solid;color:#FFFFFF;font-weight:bold;font-family:arial;font-size:18px;}
+
+li{margin: 0; padding: 4; }
+code{background-color:#FFFFFF;width:90%;margin: 5px; padding: 5px;border-color:#000000; border-width:1px; border-style:solid;display:block;}
+.man_titre{background-color:#5A89C0;width:90%;margin: 5px; padding: 5px;border-color:#FFFFFF; border-width:1px; border-style:solid;color:#FFFFFF;font-weight:bold;font-family:arial;}
+
+pre		{font-family:arial}
+
+pre a:link		{color:#0000CC;text-decoration: underline;font-weight:bold;}
+pre a:visited	{color:#0000CC;text-decoration: underline;font-weight:bold;}
+pre a:hover		{color:#0000CC;text-decoration: underline;font-weight:bold;}
+pre a:active	{color:#0000CC;text-decoration: underline;font-weight:bold;}
+
+.ssh
+{
+background-image: url("images/bandeau.gif");
+background-color:#000000;width:400px;margin: 2px; padding: 2px;border-color:#000000; border-width:1px; border-style:solid;color:#ffffff;text-align:left
+}
+
+</style></head><body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tbody><tr><td colspan="3">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td>
+<div style="color: rgb(35, 74, 118); font-size: 12px; font-weight: bold;">&nbsp;&nbsp;<a href="http://www.bash-linux.com/" style="color: rgb(35, 74, 118); font-size: 22px; font-weight: bold;">Bash-Linux.com : Le SHELL pour les nuls</a><br><br>&nbsp;&nbsp;Actuellement 44 lignes de commande disponibles	
+</div>
+</td><td align="right">
+<div class="ssh">
+	 login as: root<br>
+	 root@213.186.33.18's password:<br>
+	 Last login: Sun Mar 23 12:56:52 2008 from 88.160.71.217<br>
+	 [root@bash-linux ~] # echo "Bienvenue sur Bash-Linux.com"_</div>
+</td></tr></tbody></table>
+	</td></tr>
+
+
+
+<tr><td valign="top" width="160">
+
+
+
+
+
+
+<table style="border: 1px solid rgb(164, 192, 226);" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-1616791006614791";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "F1F1F1";
+google_color_bg = "F1F1F1";
+google_color_link = "234A76";
+google_color_text = "234A76";
+google_color_url = "234A76";
+google_ui_features = "rc:0";
+//--></script>
+<script style="display: none;" type="text/javascript" src="unix-man-elf-francais_files/show_ads.js">
+</script>
+
+
+</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+</td><td valign="top"><table style="border: 1px solid rgb(164, 192, 226);" valign="top" bgcolor="#f1f1f1" border="0" cellpadding="2" cellspacing="5" width="100%">
+
+<tbody><tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Manuel des commandes UNIX (man) Version française</td></tr>
+<tr><td style="color: rgb(35, 74, 118);">
+
+<br>
+<table style="border: 1px solid rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="5"><tbody><tr><td style="color: rgb(35, 74, 118);"><b>
+</b><form name="form" method="post" action="doc-bash-man-francais.php" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b>Indiquez la fonction :  <input name="rechman" style="width: 150px;" value="" type="text"><input value="Afficher le man" type="submit">
+
+</b></form></td></tr></tbody></table>
+<pre><div class="h1"><h1>Man Elf en français</h1></div><pre>ELF(5)                 Manuel de l'administrateur Linux                 ELF(5)
+
+
+<br>&nbsp;<br><div class="man_titre">
+NOM
+</div><br><br>     elf - Format des fichiers au Format de Liaison et d'Execution (ELF)
+<br>&nbsp;<br><div class="man_titre">
+SYNOPSIS
+</div><br><br>     #include <elf.h>
+<br>&nbsp;<br></elf.h><div class="man_titre">
+DESCRIPTION
+</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-1616791006614791";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "F1F1F1";
+google_color_bg = "5A89C0";
+google_color_link = "F1F1F1";
+google_color_url = "F1F1F1";
+google_color_text = "F1F1F1";
+google_ui_features = "rc:10";
+//--></script>
+<script style="display: none;" type="text/javascript" src="unix-man-elf-francais_files/show_ads.js">
+</script>
+<br>
+<br>     Le fichier d'en-tete <elf.h> definit le format des fichiers binaires exe-
+     cutables ELF. Ces fichiers peuvent etre des fichiers executables normaux,
+     des fichiers objets repositionnables, des fichiers core et des bibliothe-
+     ques partagees.
+
+     Un fichier executable utilisant le format de fichier ELF est constitue
+     d'un en-tete ELF, suivi d'une table d'en-tete de programme ou d'une table
+     des en-tetes de sections, ou des deux. L'en-tete ELF est toujours situe a
+     un decalage de zero par rapport au debut du fichier. Les decalages dans
+     le fichier des tables d'en-tete de programme et des en-tetes de sections
+     sont definis dans l'en-tete ELF. Ces deux tables decrivent le reste des
+     particularites du fichier.
+
+     Le fichier d'en-tete decrit, sous la forme de structures C, les en-tetes
+     mentionnes precedemment et inclut egalement des structures pour les sec-
+     tions dynamiques, les sections de repositionnement et les tables de sym-
+     boles.
+
+     Les types suivants sont utilises pour les architectures N-bit (avec N=32
+     ou 64 ; ElfN signifie Elf32 ou Elf64 ; uintN_t signifie uint32_t ou
+     uint64_t) :
+
+           ElfN_Addr       adresse (non signee) du programme, uintN_t
+           ElfN_Off        decalage (non signe) dans le fichier, uintN_t
+           ElfN_Section    indice (non signe) de section, uint16_t
+           ElfN_Versym     informations (non signees) sur les versions
+                           des symboles, uint16_t
+           Elf_Byte        caractere (char) non signe
+           ElfN_Half       uint16_t
+           ElfN_Sword      int32_t
+           ElfN_Word       uint32_t
+           ElfN_Sxword     int64_t
+           ElfN_Xword      uint64_t
+
+     (Note : la terminologie *BSD est quelque peu differente. Elf64_Half est
+     deux fois plus grand que Elf32_Half et Elf64Quarter est utilise pour
+     uint16_t. Afin d'eviter toute confusion, ces types seront remplaces par
+     des types plus explicites dans la suite de ce document.)
+
+     Toutes les structures de donnees definies par le format de fichier suiv-
+     ent la taille  naturelle  et les principes d'alignement de la classe cor-
+     respondante. Si necessaire, les structures de donnees contiennent un rem-
+     plissage explicite pour assurer l'alignement sur 4 octets des objets de
+     4 octets, pour forcer les tailles des structures a etre des multiples de
+     4, et ctera.
+
+     L'en-tete ELF est decrit par le type Elf32_Ehdr ou par le type
+     Elf64_Ehdr :
+
+           #define EI_NIDENT 16
+
+           typedef struct {
+                   unsigned char  e_ident[EI_NIDENT];
+                   uint16_t       e_type;
+                   uint16_t       e_machine;
+                   uint32_t       e_version;
+                   ElfN_Addr      e_entry;
+                   ElfN_Off       e_phoff;
+                   ElfN_Off       e_shoff;
+                   uint32_t       e_flags;
+                   uint16_t       e_ehsize;
+                   uint16_t       e_phentsize;
+                   uint16_t       e_phnum;
+                   uint16_t       e_shentsize;
+                   uint16_t       e_shnum;
+                   uint16_t       e_shstrndx;
+           } ElfN_Ehdr;
+
+     Les champs ont les significations suivantes :
+
+           e_ident      Ce tableau d'octets indique comment interpreter le
+                        fichier, independemment du processeur ou du reste du
+                        contenu du fichier. Dans ce tableau, chacun des ele-
+                        ments est nomme par une macro commencant par le pre-
+                        fixe EI_ et peut contenir des valeurs commencant par
+                        le prefixe ELF. Les macros suivantes sont definies :
+
+                        EI_MAG0     Le premier octet du nombre magique. Sa
+                                    valeur doit etre ELFMAG0 (0 : 0x7f).
+
+                        EI_MAG1     Le deuxieme octet du nombre magique. Sa
+                                    valeur doit etre ELFMAG1 (1 :  E ).
+
+                        EI_MAG2     Le troisieme octet du nombre magique. Sa
+                                    valeur doit etre ELFMAG2 (2 :  L ).
+
+                        EI_MAG3     Le quatrieme octet du nombre magique. Sa
+                                    valeur doit etre ELFMAG3 (3 :  F ).
+
+                        EI_CLASS    Le cinquieme octet indique l'architecture
+                                    pour ce binaire :
+
+                             <b>       ELFCLASSNONE </b> Cette classe est invalide.
+                                    ELFCLASS32    Cette valeur indique une
+                                                  architecture 32 bits.  Il
+                                                  permet d'utiliser des
+                                                  machines avec des espaces
+                                                  d'adressage virtuels et des
+                                                  fichiers d'une taille allant
+                                                  jusqu'a 4 giga-octets.
+                                    ELFCLASS64    Cette valeur indique une
+                                                  architecture 64 bits.
+
+                        EI_DATA     Le sixieme octet indique le codage utilise
+                                    pour les donnees specifiques au processeur
+                                    de ce fichier. Actuellement, les codages
+                                    suivants sont permis :
+
+                             <b>       ELFDATANONE </b> Format de donnees inconnu.
+                                    ELFDATA2LSB  Complement a deux, petit bou-
+                                                 tien.
+                                    ELFDATA2MSB  Complement a deux, gros bou-
+                                                 tien.
+
+                        EI_VERSION  Le numero de version de la specification
+                                    du format ELF :
+
+                                    EV_NONE     Version invalide.
+                                    EV_CURRENT  Version actuelle.
+
+                        EI_OSABI    Cet octet identifie le systeme d'exploita-
+                                    tion et l'interface binaire des applica-
+                                    tions (ABI) auxquels cet objet est des-
+                                    tine. Certains des champs d'autres struc-
+                                    tures ELF contiennent des valeurs et des
+                                    drapeaux dont la signification depend de
+                                    la plate-forme ; l'interpretation de ces
+                                    champs depend de la valeur de cet octet.
+                                    Par exemple :
+
+                                    ELFOSABI_NONE        Identique a ELFOS-
+                                                         ABI_SYSV.
+                                    ELFOSABI_SYSV <b>       ABI </b>d'UNIX System V.
+                                    ELFOSABI_HPUX <b>       ABI </b>de HP-UX.
+                                    ELFOSABI_NETBSD      ABI de NetBSD.
+                                    ELFOSABI_LINUX<b>       ABI </b>de Linux.
+                                    ELFOSABI_SOLARIS     ABI de Solaris.
+                                    ELFOSABI_IRIX <b>       ABI </b>d'IRIX.
+                                    ELFOSABI_FREEBSD     ABI de FreeBSD.
+                                    ELFOSABI_TRU64<b>       ABI </b>de l'UNIX TRU64.
+                                    ELFOSABI_ARM  <b>       ABI </b>de l'architecture
+                                                         ARM.
+                                    ELFOSABI_STANDALONE  ABI autonome (inte-
+                                                         gree).
+
+                        EI_ABIVERSION
+                                    Cet octet identifie la version de l'inter-
+                                    face binaire des applications (ABI) a
+                                    laquelle cet objet est destine. Ce champ
+                                    permet de differencier des versions incom-
+                                    patibles d'une meme ABI. L'interpretation
+                                    de ce numero de version depend de l'ABI
+                                    indiquee par le champs EI_OSABI. Les
+                                    applications respectant cette specifica-
+                                    tion utilisent la valeur 0.
+
+                        EI_PAD      Debut du remplissage.  Ces octets sont
+                                    reserves et positionnes a zero.  Les pro-
+                                    grammes qui les lisent ne doivent pas en
+                                    tenir compte. La valeur de EI_PAD sera
+                                    modifiee dans le futur si l'on decide de
+                                    donner une signification a des octets
+                                    actuellement inutilises.
+
+                        EI_BRAND    Debut de l'identification de l'architec-
+                                    ture.
+
+                        EI_NIDENT   Taille du tableau e_ident.
+
+           e_type       Ce champ de la structure identifie le type de fichier
+                        objet :
+
+                        ET_NONE  Un type inconnu.
+                        ET_REL   Un fichier repositionnable.
+                        ET_EXEC  Un fichier executable.
+                        ET_DYN   Un objet partage.
+                        ET_CORE  Un fichier core.
+
+           e_machine    Ce champ indique l'architecture necessaire a un
+                        fichier individuel. Par exemple :
+
+                        EM_NONE         Une machine inconnue.
+                        EM_M32          Un WE 32100 d'AT&amp;T.
+                        EM_SPARC        Un SPARC de Sun Microsystems.
+                        EM_386          Un 80386 d'Intel.
+                        EM_68K          Un 68000 de Motorola.
+                        EM_88K          Un 88000 de Motorola.
+                        EM_860          Un 80860 d'Intel.
+                        EM_MIPS         Un RS3000 de MIPS (uniquement gros
+                                        boutien).
+                        EM_PARISC       Un HP/PA.
+                        EM_SPARC32PLUS  Un SPARC avec jeu d'instructions ame-
+                                        liore.
+                        EM_PPC          Un PowerPC.
+                        EM_PPC64        Un PowerPC 64 bits.
+                        EM_S390         Un S/390 d'IBM.
+                        EM_ARM          Un ARM.
+                        EM_SH           Un SuperH de Renesas.
+                        EM_SPARCV9      Un SPARC v9 64 bits.
+                        EM_IA_64        Un Itanium d'Intel.
+                        EM_X86_64       Un x86-64 d'AMD.
+                        EM_VAX          Un Vax de DEC.
+
+           e_version    Ce champ indique la version du fichier :
+
+                        EV_NONE     Version invalide.
+                        EV_CURRENT  Version actuelle.
+
+           e_entry      Ce champ indique l'adresse virtuelle a laquelle le
+                        systeme transfere initialement le controle, demarrant
+                        ainsi le processus. Si ce fichier ne possede pas de
+                        point d'entree, ce champ contient zero.
+
+           e_phoff      Ce champ contient le decalage en octets de la table
+                        contenant l'en-tete de programme. Si ce fichier ne
+                        contient pas de table d'en-tete de programme, ce champ
+                        contient zero.
+
+           e_shoff      Ce champ contient le decalage en octets de la table
+                        des en-tetes de sections. Si ce fichier ne contient
+                        pas de table des en-tetes des sections, ce champ con-
+                        tient zero.
+
+           e_flags      Ce champ contient des drapeaux specifiques au pro-
+                        cesseur. Le nom de ces drapeaux prend la forme :
+                        EF_machine_drapeau.  l'heure actuelle, aucun drapeau
+                        n'a ete defini.
+
+           e_ehsize     Ce champ contient la taille de l'en-tete ELF en
+                        octets.
+
+           e_phentsize  Ce champ contient la taille en octets d'une entree de
+                        la table d'en-tete de programme ; toutes les entrees
+                        ont la meme taille.
+
+           e_phnum      Ce champ contient le nombre d'entrees de la table
+                        d'en-tete de programme. Ainsi, la taille en octets de
+                        la table pourra etre obtenue en multipliant
+                        e_phentsize par e_phnum. Si le fichier ne contient pas
+                        d'en-tete de programme, e_phnum contiendra la valeur
+                        zero.
+
+           e_shentsize  Ce champ contient la taille en octets d'un en-tete de
+                        section. Un en-tete de section est une entree de la
+                        table des en-tetes de sections ; toutes les entrees
+                        ont la meme taille.
+
+           e_shnum      Ce champ contient le nombre d'entrees de la table des
+                        en-tetes de sections. Ainsi, la taille en octets de la
+                        table des en-tetes de sections pourra etre obtenue en
+                        multipliant e_shentsize par e_shnum. S'il n'y a pas de
+                        table des en-tetes de sections, le champ e_shnum con-
+                        tiendra zero.
+
+           e_shstrndx   Ce champ contient l'indice dans la table des en-tetes
+                        de sections de l'entree associee a la table des
+                        chaines de noms des sections. Si le fichier ne con-
+                        tient pas de table des chaines de noms des sections,
+                        ce champ contiendra la valeur SHN_UNDEF.
+
+                        SHN_UNDEF      Cette valeur indique une reference de
+                                       section non definie, manquante, non
+                                       pertinente ou, d'une facon ou d'une
+                                       autre, sans signification. Par exemple,
+                                       un symbole defini par rapport a une
+                                       section de numero SHN_UNDEF est un sym-
+                                       bole indefini.
+
+                        SHN_LORESERVE  Cette valeur indique la borne
+                                       inferieure de la plage d'indices
+                                       reserves.
+
+                        SHN_LOPROC     Cette valeur et les valeurs suivantes
+                                       jusqu'a SHN_HIPROC (incluse) sont
+                                       reservees a des semantiques specifiques
+                                       au processeur.
+
+                        SHN_HIPROC     Cette valeur et les valeurs precedentes
+                                       depuis SHN_LOPROC (incluse) sont
+                                       reservees a des semantiques specifiques
+                                       au processeur.
+
+                        SHN_ABS        Cette valeur indique que les references
+                                       correspondantes sont des valeurs
+                                       absolues. Par exemple, les symboles
+                                       definis par rapport a une section
+                                       SHN_ABS ont des valeurs absolues et ne
+                                       sont pas affectees par le reposition-
+                                       nement.
+
+                        SHN_COMMON     Les symboles definis par rapport a
+                                       cette section sont des symboles com-
+                                       muns, comme par exemple des COMMON For-
+                                       tran ou des variables externes C non
+                                       allouees.
+
+                        SHN_HIRESERVE  Cette valeur indique la borne
+                                       superieure de la plage d'indices
+                                       reserves entre SHN_LORESERVE et
+                                       SHN_HIRESERVE, inclus ; ces valeurs ne
+                                       sont pas des references de la table des
+                                       en-tetes des sections. Autrement dit,
+                                       la table des en-tetes de sections ne
+                                       contient pas d'entree pour les indices
+                                       reserves.
+
+     La table d'en-tete de programme d'un executable ou d'un objet partage est
+     un tableau de structures, chacune d'entre-elles decrivant un segment ou
+     d'autres informations dont le systeme a besoin pour preparer l'execution
+     du programme. Un segment de fichier objet contient une ou plusieurs
+     sections. L'en-tete de programme n'a de sens que pour les fichiers objets
+     partages ou des fichiers executables. Un fichier indique la taille de son
+     en-tete de programme grce aux champs e_phentsize et e_phnum de l'en-tete
+     ELF. Selon l'architecture, l'en-tete de programme ELF est represente par
+     un type Elf32_Phdr ou un type Elf64_Phdr :
+
+           typedef struct {
+                   uint32_t        p_type;
+                   Elf32_Off       p_offset;
+                   Elf32_Addr      p_vaddr;
+                   Elf32_Addr      p_paddr;
+                   uint32_t        p_filesz;
+                   uint32_t        p_memsz;
+                   uint32_t        p_flags;
+                   uint32_t        p_align;
+           } Elf32_Phdr;
+
+           typedef struct {
+                   uint32_t        p_type;
+                   uint32_t        p_flags;
+                   Elf64_Off       p_offset;
+                   Elf64_Addr      p_vaddr;
+                   Elf64_Addr      p_paddr;
+                   uint64_t        p_filesz;
+                   uint64_t        p_memsz;
+                   uint64_t        p_align;
+           } Elf64_Phdr;
+
+     La principale difference entre l'en-tete d'un programme 32 bits et l'en-
+     tete d'un programme 64 bits est l'emplacement du champ p_flags dans la
+     structure complete.
+
+           p_type    Ce champ de la structure Phdr indique le type de segment
+                     decrit par cet element de tableau ou comment interpreter
+                     ses informations.
+
+                     PT_NULL     Cet element du tableau est inutilise et les
+                                 valeurs des autres champs sont sans signifi-
+                                 cation. Cela permet a l'en-tete de programme
+                                 de contenir des entrees non prises en compte.
+
+                     PT_LOAD     Cet element du tableau indique un segment
+                                 chargeable, decrit par p_filesz et p_memsz.
+                                 Les octets du fichier sont projetes au debut
+                                 du segment memoire. Si la taille memoire du
+                                 segment (p_memsz) est plus grande que la
+                                 taille du fichier (p_filesz), les octets
+                                 supplementaires sont definis comme contenant
+                                 la valeur 0 et places a la suite de la zone
+                                 initialisee du segment. La taille du fichier
+                                 ne peut etre superieure a la taille de la
+                                 memoire. Dans la table d'en-tete de pro-
+                                 gramme, les entrees de segments chargeables
+                                 sont indiquees par ordre croissant, classees
+                                 selon le champ p_vaddr.
+
+                     PT_DYNAMIC  L'element de tableau contient des informa-
+                                 tions de liaison dynamique.
+
+                     PT_INTERP   L'element de tableau contient l'emplacement
+                                 et la taille du nom de chemin utilise pour
+                                 invoquer l'interpreteur. Ce nom de chemin est
+                                 termine par un octet nul. Ce type de segment
+                                 n'a de sens que pour des fichiers executables
+                                 (bien qu'il puisse etre present dans des
+                                 objets partages). Il ne peut etre present
+                                 qu'une seule fois dans un fichier. S'il est
+                                 present, il doit preceder toutes les entrees
+                                 de segments chargeables.
+
+                     PT_NOTE     L'element de tableau contient l'emplacement
+                                 et la taille d'informations auxiliaires.
+
+                     PT_SHLIB    Ce type de segment est reserve, mais sa
+                                 semantique n'est pas definie. Les programmes
+                                 contenant un tel element de tableau ne sont
+                                 pas conformes a l'interface binaire (ABI).
+
+                     PT_PHDR     L'element de tableau, s'il est present, con-
+                                 tiendra l'emplacement et la taille de la ta-
+                                 ble d'en-tete de programme elle-meme, a la
+                                 fois dans le fichier et dans l'image memoire
+                                 du programme. Ce type de segment ne peut etre
+                                 present qu'une seule fois dans un fichier.
+                                 Qui plus est, il ne peut etre present que si
+                                 l'en-tete de programme fait partie de l'image
+                                 memoire du programme. S'il est present, il
+                                 doit preceder toutes les entrees de segments
+                                 chargeables.
+
+                     PT_LOPROC   Cette valeur et les valeurs suivantes jusqu'a
+                                 PT_HIPROC (incluse) sont reservees a des
+                                 semantiques specifiques au processeur.
+
+                     PT_HIPROC   Cette valeur et les valeurs precedentes
+                                 depuis PT_LOPROC (incluse) sont reservees a
+                                 des semantiques specifiques au processeur.
+
+           p_offset  Ce champ contient le decalage du premier octet du segment
+                     par rapport au debut du fichier.
+
+           p_vaddr   Ce champ contient l'adresse virtuelle en memoire du pre-
+                     mier octet du segment.
+
+           p_paddr   Ce champ est reserve pour l'adresse physique du segment,
+                     pour les systemes pour lesquels l'adresse physique est
+                     pertinente. Sous BSD, ce champ n'est pas utilise et doit
+                     avoir pour valeur zero.
+
+           p_filesz  Ce champ contient la taille en octets de l'image fichier
+                     de ce segment. Il peut etre egal a zero.
+
+           p_memsz   Ce champ contient la taille en octets de l'image memoire
+                     de ce segment. Il peut etre egal a zero.
+
+           p_flags   Ce champ contient les drapeaux relatifs a ce segment :
+
+                     PF_X  Un segment executable.
+                     PF_W  Un segment accessible en ecriture.
+                     PF_R  Un segment accessible en lecture.
+
+                     Les drapeaux PF_X et PF_R sont habituellement associes a
+                     un segment de texte. Les drapeaux PF_X, PF_W et PF_R sont
+                     habituellement associes a un segment de donnees.
+
+           p_align   Ce champ contient la valeur selon laquelle les segments
+                     sont alignes en memoire et dans le fichier. Pour des seg-
+                     ments de processus chargeables, les valeurs p_vaddr et
+                     p_offset doivent etre congrues, modulo la taille de la
+                     page. Des valeurs de zero ou de un indiquent qu'aucun
+                     alignement n'est necessaire. Sinon, p_align doit etre un
+                     nombre positif puissance entiere de deux et p_vaddr doit
+                     etre egal a p_offset modulo p_align.
+
+     La table des en-tetes de sections d'un fichier permet de retrouver toutes
+     les sections du fichier. C'est un tableau de structures Elf32_Shdr ou
+     Elf64_Shdr. Le champ e_shoff de l'en-tete ELF donne son decalage en
+     octets depuis le debut du fichier. e_shnum contient son nombre d'entrees.
+     e_shentsize contient la taille en octets de chaque entree.
+
+     Un indice de la table des en-tetes de sections est un indice de ce
+     tableau. Certains de ces indices sont reserves. Un fichier objet ne con-
+     tiendra pas les sections correspondant a ces indices :
+
+     SHN_UNDEF      Cette valeur indique une reference de section non definie,
+                    manquante, non pertinente ou, d'une maniere ou d'une
+                    autre, sans signification.
+
+     SHN_LORESERVE  Cette valeur correspondant a la borne inferieure de la
+                    plage des indices reserves.
+
+     SHN_LOPROC     Cette valeur et les valeurs suivantes jusqu'a SHN_HIPROC
+                    (incluse) sont reservees a des semantiques specifiques au
+                    processeur.
+
+     SHN_HIPROC     Cette valeur et les valeurs precedentes depuis SHN_LOPROC
+                    (incluse) sont reservees a des semantiques specifiques au
+                    processeur.
+
+     SHN_ABS        Cette valeur indique que la reference correspondante est
+                    une valeur absolue. Par exemple, un symbole defini par
+                    rapport a une section numero SHN_ABS a une valeur absolue
+                    et n'est pas affecte par un repositionnement.
+
+     SHN_COMMON     Les symboles definis par rapport a cette section sont des
+                    symboles communs, comme par exemple des COMMON Fortran ou
+                    des variables externes C non allouees.
+
+     SHN_HIRESERVE  Cette valeur indique la borne superieure de la plage des
+                    indices reserves. Le systeme reserve les indices compris
+                    entre SHN_LORESERVE et SHN_HIRESERVE, inclus. La table des
+                    en-tetes de sections ne contient pas d'entree pour les
+                    indices reserves.
+
+     L'en-tete de section a la structure suivante :
+
+           typedef struct {
+                   uint32_t        sh_name;
+                   uint32_t        sh_type;
+                   uint32_t        sh_flags;
+                   Elf32_Addr      sh_addr;
+                   Elf32_Off       sh_offset;
+                   uint32_t        sh_size;
+                   uint32_t        sh_link;
+                   uint32_t        sh_info;
+                   uint32_t        sh_addralign;
+                   uint32_t        sh_entsize;
+           } Elf32_Shdr;
+
+           typedef struct {
+                   uint32_t        sh_name;
+                   uint32_t        sh_type;
+                   uint64_t        sh_flags;
+                   Elf64_Addr      sh_addr;
+                   Elf64_Off       sh_offset;
+                   uint64_t        sh_size;
+                   uint32_t        sh_link;
+                   uint32_t        sh_info;
+                   uint64_t        sh_addralign;
+                   uint64_t        sh_entsize;
+           } Elf64_Shdr;
+
+     Il n'y a pas de reelle difference entre les en-tetes de sections en
+     32 bits et en 64 bits.
+
+           sh_name       Ce champ indique le nom de la section. Sa valeur est
+                         un indice de la table des chaines des en-tetes de
+                         sections, contenant l'emplacement d'une chaine termi-
+                         nee par un octet nul.
+
+           sh_type       Ce champ definit le contenu et la semantique de la
+                         section.
+
+                         SHT_NULL      Cette valeur indique que cet en-tete de
+                                       section est inactif. Il n'a donc pas de
+                                       section associee. Les valeurs des
+                                       autres champs de l'en-tete de cette
+                                       section ne sont pas definies.
+
+                         SHT_PROGBITS  Cette section contient des informations
+                                       definies par le programme, dont le for-
+                                       mat et le sens sont uniquement deter-
+                                       mines par celui-ci.
+
+                         SHT_SYMTAB    Cette section contient une table de
+                                       symboles. En general, cette table con-
+                                       tient des symboles pour l'edition de
+                                       liens, bien qu'elle puisse aussi etre
+                                       utilisee pour la liaison dynamique.
+                                       Comme il s'agit d'une table de symboles
+                                       complete, elle peut contenir de nom-
+                                       breux symboles inutiles a la liaison
+                                       dynamique. Un fichier objet peut aussi
+                                       contenir une section SHT_DYNSYM.
+
+                         SHT_STRTAB    Cette section contient une table de
+                                       chaines. Un fichier objet peut contenir
+                                       plusieurs sections de ce type.
+
+                         SHT_RELA      Cette section contient des entrees de
+                                       repositionnement contenant des additifs
+                                       explicites, par exemple du type
+                                       Elf32_Rela pour les fichiers objets
+                                       appartenant a la classe des 32 bits. Un
+                                       objet peut contenir plusieurs sections
+                                       de ce type.
+
+                         SHT_HASH      Cette section contient une table de
+                                       hachage pour les symboles. Un objet
+                                       participant a une liaison dynamique
+                                       doit en contenir une. Un fichier objet
+                                       ne peut contenir qu'une seule table de
+                                       ce type.
+
+                         SHT_DYNAMIC   Cette section contient les informations
+                                       de liaison dynamique. Un fichier objet
+                                       ne peut contenir qu'une seule section
+                                       de ce type.
+
+                         SHT_NOTE      Cette section contient des informations
+                                       servant a marquer le fichier d'une
+                                       facon ou d'une autre.
+
+                         SHT_NOBITS    Une section de ce type ressemble a
+                                       SHT_PROGBITS mais n'occupe pas de place
+                                       dans le fichier. Bien que cette section
+                                       ne contienne aucun octet, le champ
+                                       sh_offset contient son decalage theo-
+                                       rique dans le fichier.
+
+                         SHT_REL       Cette section contient des entrees de
+                                       repositionnement sans additif
+                                       explicite, par exemple du type
+                                       Elf32_Rel pour les fichiers objets
+                                       appartenant a la classe des 32 bits. Un
+                                       objet peut contenir plusieurs sections
+                                       de ce type.
+
+                         SHT_SHLIB     Cette section est reservee et sa seman-
+                                       tique n'est pas definie.
+
+                         SHT_DYNSYM    Cette section contient un jeu de sym-
+                                       boles minimal de liaison dynamique. Un
+                                       fichier objet peut aussi contenir une
+                                       section SHT_SYMTAB.
+
+                         SHT_LOPROC    Cette valeur et les valeurs suivantes
+                                       jusqu'a SHT_HIPROC (incluse) sont
+                                       reservees a des semantiques specifiques
+                                       au processeur.
+
+                         SHT_HIPROC    Cette valeur et les valeurs precedentes
+                                       depuis SHT_LOPROC (incluse) sont
+                                       reservees a des semantiques specifiques
+                                       au processeur.
+
+                         SHT_LOUSER    Cette valeur indique la borne
+                                       inferieure de la plage des indices
+                                       reserves aux programmes applicatifs.
+
+                         SHT_HIUSER    Cette valeur indique la borne
+                                       superieure de la plage des indices
+                                       reserves aux programmes applicatifs.
+                                       Les types des sections entre SHT_LOUSER
+                                       et SHT_HIUSER peuvent etre utilises par
+                                       l'application, sans que cela entre en
+                                       conflit avec les actuels ou futurs
+                                       types de sections definis par le sys-
+                                       teme.
+
+           sh_flags      Les sections contiennent des drapeaux binaires
+                         decrivant divers attributs. Si, dans sh_flags, le bit
+                         correspondant a un drapeau est positionne, l'attribut
+                         est active pour cette section. Sinon, l'attribut est
+                         desactive ou ne s'applique pas. Les attributs non
+                         definis sont mis a zero.
+
+                         SHF_WRITE      Cette section contient des donnees sur
+                                        lesquelles il devrait etre possible
+                                        d'ecrire durant l'execution du proces-
+                                        sus.
+                         SHF_ALLOC      Cette section est presente en memoire
+                                        durant l'execution du processus. Cer-
+                                        taines sections de controle ne sont
+                                        pas presentes dans l'image memoire
+                                        d'un fichier objet. Cet attribut est
+                                        desactive pour ces sections.
+                         SHF_EXECINSTR  Cette section contient des instruc-
+                                        tions machine executables.
+                         SHF_MASKPROC   Tous les bits contenus dans ce masque
+                                        sont reserves a des semantiques speci-
+                                        fiques au processeur.
+
+           sh_addr       Si cette section apparait dans l'image memoire d'un
+                         processus, ce champ contient l'adresse a laquelle le
+                         premier octet de la section doit se trouver. Sinon,
+                         ce champ contient zero.
+
+           sh_offset     La valeur de ce champ indique le decalage du premier
+                         octet de la section par rapport au debut du fichier.
+                         Une section de type SHT_NOBITS, n'occupe pas de place
+                         dans le fichier et son champ sh_offset indique son
+                         placement theorique dans le fichier.
+
+           sh_size       Ce champ contient la taille de la section en octets.
+                         moins que cette section ne soit de type SHT_NOBITS,
+                         elle occupe sh_size octets dans le fichier. Une sec-
+                         tion de type SHT_NOBITS peut avoir une taille non
+                         nulle, mais elle n'occupera cependant aucune place
+                         dans le fichier.
+
+           sh_link       Ce champ contient un lien vers un indice de la table
+                         des en-tetes de sections, dont l'interpretation
+                         depend du type de section.
+
+           sh_info       Ce champ contient des informations complementaires,
+                         dont l'interpretation depend du type de section.
+
+           sh_addralign  Certaines sections ont des contraintes d'alignement.
+                         Si une section contient un mot double, le systeme
+                         doit s'assurer que la section tout entiere est
+                         alignee sur les mots doubles. Autrement dit, la
+                         valeur de sh_addr doit etre congrue a zero, modulo la
+                         valeur de sh_addralign. Seules des valeurs de zero ou
+                         des nombres positifs puissances entieres de deux sont
+                         autorises. Une valeur de zero ou de un indique
+                         qu'aucune contrainte d'alignement ne s'applique a la
+                         section.
+
+           sh_entsize    Certaines sections contiennent une table contenant un
+                         nombre d'entrees fixe, comme par exemple les tables
+                         de symboles. Pour de telles sections, ce champ donne
+                         la taille en octets de chaque entree. Ce champ con-
+                         tient zero si cette section ne contient pas une table
+                         de ce type.
+
+     Diverses sections contiennent des informations de controle et sur le pro-
+     gramme :
+
+           .bss       Cette section contient des donnees non initialisees qui
+                      font partie de l'image memoire du programme. Par defini-
+                      tion, le systeme initialise ces donnees avec des zeros
+                      lorsque le programme demarre. Cette section est du type
+                      SHT_NOBITS. Ses attributs sont SHF_ALLOC et SHF_WRITE.
+
+           .comment   Cette section contient des informations de suivi des
+                      versions. Cette section est du type SHT_PROGBITS. Aucun
+                      attribut n'est utilise.
+
+           .ctors     Cette section contient des pointeurs initialises vers
+                      des constructeurs C++. Cette section est du type
+                      SHT_PROGBITS. Ses attributs sont SHF_ALLOC et SHF_WRITE.
+
+           .data      Cette section contient des donnees faisant partie de
+                      l'image memoire du programme. Elle est du type
+                      SHT_PROGBITS. Ses attributs sont SHF_ALLOC et SHF_WRITE.
+
+           .data1     Cette section contient des donnees faisant partie de
+                      l'image memoire du programme. Elle est du type
+                      SHT_PROGBITS. Ses attributs sont SHF_ALLOC et SHF_WRITE.
+
+           .debug     Cette section contient des donnees de debogage symbol-
+                      ique. Son contenu n'est pas specifie. Elle est du type
+                      SHT_PROGBITS. Aucun attribut n'est utilise.
+
+           .dtors     Cette section contient des pointeurs initialises vers
+                      des destructeurs C++. Elle est du type SHT_PROGBITS. Ses
+                      attributs sont SHF_ALLOC et SHF_WRITE.
+
+           .dynamic   Cette section contient des informations de liaison
+                      dynamique. Les attributs de cette section comprennent le
+                      bit SHF_ALLOC. Le positionnement ou non du bit SHF_WRITE
+                      depend du processeur. Cette section est du type
+                      SHT_DYNAMIC.
+
+           .dynstr    Cette section contient les chaines necessaires a la
+                      liaison dynamique, le plus souvent les chaines represen-
+                      tant les noms associes aux entrees de la table des sym-
+                      boles. Cette section est du type SHT_STRTAB. L'attribut
+                      utilise est SHF_ALLOC.
+
+           .dynsym    Cette section contient la table des symboles de liaison
+                      dynamique. Cette section est du type SHT_DYNSYM.
+                      L'attribut utilise est SHF_ALLOC.
+
+           .fini      Cette section contient des instructions executables qui
+                      font partie du code de fin du processus. Lorsqu'un pro-
+                      gramme se termine normalement, le systeme organise
+                      l'execution du code de cette section. Elle est du type
+                      SHT_PROGBITS. Les attributs utilises sont SHF_ALLOC et
+                      SHF_EXECINSTR.
+
+           .got       Cette section contient la table globale des decalages.
+                      Elle est du type SHT_PROGBITS. Les attributs sont speci-
+                      fiques au processeur.
+
+           .hash      Cette section contient la table de hachage des symboles.
+                      Elle est du type SHT_HASH. L'attribut utilise est
+                      SHF_ALLOC.
+
+           .init      Cette section contient des instructions executables qui
+                      font partie du code d'initialisation du processus.
+                      Lorsqu'un programme demarre, le systeme organise l'exe-
+                      cution du code de cette section avant d'appeler le point
+                      d'entree principal du programme. Cette section est du
+                      type SHT_PROGBITS. Les attributs utilises sont SHF_ALLOC
+                      et SHF_EXECINSTR.
+
+           .interp    Cette section contient le chemin d'un interpreteur de
+                      programmes. Si le fichier comporte un segment chargeable
+                      contenant cette section, les attributs de la section
+                      contiendront le bit SHF_ALLOC. Sinon, ce bit sera desac-
+                      tive. Cette section est du type SHT_PROGBITS.
+
+           .line      Cette section contient des informations sur les numeros
+                      de lignes, qui seront utilisees pour le debogage symbol-
+                      ique. Ces informations etablissent la correspondance
+                      entre le code source du programme et le code machine. Le
+                      contenu de cette section n'est pas specifie. Cette sec-
+                      tion est du type SHT_PROGBITS. Aucun attribut n'est
+                      utilise.
+
+           .note      Cette section contient des informations respectant un
+                      format specifique. Elle est de type SHT_NOTE. Aucun
+                      attribut n'est utilise. Les executables natifs OpenBSD
+                      contiennent en general une section .note.openbsd.ident
+                      leur permettant de s'identifier, afin de court-cir-
+                      cuiter, lors du chargement du fichier, toutes les veri-
+                      fications de compatibilite de l'emulation binaire ELF.
+
+           .plt       Cette section contient une table de liaison des proce-
+                      dures. Elle est du type SHT_PROGBITS. Ses attributs sont
+                      specifiques au processeur.
+
+           .relNOM    Cette section contient des informations de reposition-
+                      nement, comme decrit ci-dessous. Si ce fichier comporte
+                      un segment chargeable comprenant du repositionnement,
+                      les attributs de la section contiendront le bit
+                      SHF_ALLOC. Sinon, ce bit sera desactive. Par convention,
+                      le NOM est fourni par la section a laquelle le reposi-
+                      tionnement s'applique. Ainsi, une section de reposition-
+                      nement pour du .text s'appellera normalement .rel.text.
+                      Cette section est du type SHT_REL.
+
+           .relaNOM   Cette section contient des informations de reposition-
+                      nement, comme decrit ci-dessous. Si ce fichier comporte
+                      un segment chargeable comprenant du repositionnement,
+                      les attributs de la section contiendront le bit
+                      SHF_ALLOC. Sinon, ce bit sera desactive. Par convention,
+                      le NOM est fourni par la section a laquelle le reposi-
+                      tionnement s'applique. Ainsi, une section de reposition-
+                      nement pour du .text s'appellera normalement .rela.text.
+                      Cette section est du type SHT_RELA.
+
+           .rodata    Cette section contient des donnees en lecture seule, qui
+                      feront classiquement partie d'un segment non accessible
+                      en ecriture dans l'image du processus. Cette section est
+                      du type SHT_PROGBITS. L'attribut utilise est SHF_ALLOC.
+
+           .rodata1   Cette section contient des donnees en lecture seule, qui
+                      feront classiquement partie d'un segment non accessible
+                      en ecriture dans l'image du processus. Cette section est
+                      du type SHT_PROGBITS. L'attribut utilise est SHF_ALLOC.
+
+           .shstrtab  Cette section contient des noms des sections. Elle est
+                      du type SHT_STRTAB. Aucun attribut n'est utilise.
+
+           .strtab    Cette section contient des chaines, le plus souvent ces
+                      chaines representent les noms associes aux entrees de la
+                      table des symboles. Si ce fichier comporte un segment
+                      chargeable comprenant la table des chaines de symboles,
+                      les attributs de la section contiendront le bit
+                      SHF_ALLOC. Sinon, ce bit sera desactive. Cette section
+                      est du type SHT_STRTAB.
+
+           .symtab    Cette section contient une table des symboles. Si ce
+                      fichier comporte un segment chargeable contenant la ta-
+                      ble des symboles, les attributs de la section contien-
+                      dront le bit SHF_ALLOC. Sinon, ce bit sera desactive.
+                      Cette section est du type SHT_SYMTAB.
+
+           .text      Cette section contient le texte, autrement dit les
+                      instructions executables, d'un programme. Cette section
+                      est du type SHT_PROGBITS. Les attributs utilises sont
+                      SHF_ALLOC et SHF_EXECINSTR.
+
+     Les sections de tables de chaines contiennent des sequences de caracteres
+     terminees par un octet nul, communement appelees chaines. Le fichier
+     objet utilise ces chaines pour representer les noms des symboles et des
+     sections. Le premier octet, qui est l'indice zero, est defini comme con-
+     tenant un octet nul. De meme, le dernier octet de la table de chaines est
+     defini comme contenant un octet nul, ce qui assure que toutes les chaines
+     se termineront bien par un caractere nul.
+
+     La table des symboles d'un fichier objet contient les informations perme-
+     ttant de localiser et de repositionner les definitions et references sym-
+     boliques d'un programme. Un indice dans une table de symbole est un
+     indice de ce tableau.
+
+           typedef struct {
+                   uint32_t        st_name;
+                   Elf32_Addr      st_value;
+                   uint32_t        st_size;
+                   unsigned char   st_info;
+                   unsigned char   st_other;
+                   uint16_t        st_shndx;
+           } Elf32_Sym;
+
+           typedef struct {
+                   uint32_t        st_name;
+                   unsigned char   st_info;
+                   unsigned char   st_other;
+                   uint16_t        st_shndx;
+                   Elf64_Addr      st_value;
+                   uint64_t        st_size;
+           } Elf64_Sym;
+
+     Les versions 32 bits et 64 bits comportent les memes champs, mais dans un
+     ordre different.
+
+           st_name   Ce champ contient un indice de la table des chaines de
+                     symboles d'un fichier objet. Cette table contient la rep-
+                     resentation sous la forme de chaines de caracteres des
+                     noms des symboles. Si la valeur de ce champ est non
+                     nulle, il represente l'indice de la table des chaines qui
+                     donne son nom au symbole. Sinon, le symbole n'a pas de
+                     nom.
+
+           st_value  Ce champ donne la valeur associee au symbole.
+
+           st_size   Des tailles sont associees a nombre de symboles. Ce champ
+                     contient zero si le symbole n'a pas de taille ou si sa
+                     taille est inconnue.
+
+           st_info   Ce champ indique le type de symbole et ses attributs de
+                     liaison :
+
+                     STT_NOTYPE   Le type de ce symbole n'est pas defini.
+
+                     STT_OBJECT   Ce symbole est associe a un objet donne.
+
+                     STT_FUNC     Ce symbole est associe a une fonction ou un
+                                  autre code executable.
+
+                     STT_SECTION  Ce symbole est associe a une section. Les
+                                  entrees de ce type de la table des symboles
+                                  existent principalement pour le reposition-
+                                  nement et ont normalement des liaisons
+                                  STB_LOCAL.
+
+                     STT_FILE     Par convention, le nom de ce symbole donne
+                                  le nom du fichier source associe au fichier
+                                  objet. Un symbole de ce type a des liaisons
+                                  STB_LOCAL, son indice de section est
+                                  SHN_ABS, et, s'il est present, il precede
+                                  les autres symboles STB_LOCAL du fichier.
+
+                     STT_LOPROC   Cette valeur et les valeurs suivantes
+                                  jusqu'a STT_HIPROC (incluse) sont reservees
+                                  a des semantiques specifiques au processeur.
+
+                     STT_HIPROC   Cette valeur et les valeurs precedentes
+                                  depuis STT_LOPROC (incluse) sont reservees a
+                                  des semantiques specifiques au processeur.
+
+                     STB_LOCAL   Les symboles locaux ne sont pas visibles en
+                                 dehors du fichier objet contenant leur defi-
+                                 nition. Des symboles locaux de meme nom peu-
+                                 vent exister dans plusieurs fichiers sans
+                                 interferer les uns avec les autres.
+
+                     STB_GLOBAL  Les symboles globaux sont visibles de tous
+                                 les fichiers objets reunis ensembles. La def-
+                                 inition par un fichier d'un symbole global
+                                 satisfera une reference non definie d'un
+                                 autre fichier a ce meme symbole.
+
+                     STB_WEAK    Les symboles faibles ressemblent a des sym-
+                                 boles globaux, mais la definition des sym-
+                                 boles globaux prend le pas sur celle des sym-
+                                 boles faibles.
+
+                     STB_LOPROC  Cette valeur et les valeurs suivantes jusqu'a
+                                 STB_HIPROC (incluse) sont reservees a des
+                                 semantiques specifiques au processeur.
+
+                     STB_HIPROC  Cette valeur et les valeurs precedentes
+                                 depuis STB_LOPROC (incluse) sont reservees a
+                                 des semantiques specifiques au processeur.
+
+                     Il existe des macros permettant de coder et de decoder
+                     les champs de type et de liaison :
+
+                     ELF32_ST_BIND(info) ou ELF64_ST_BIND(info) permet
+                     d'extraire une liaison d'une valeur st_info.
+
+                     ELF32_ST_TYPE(info) ou ELF64_ST_TYPE(info) permet
+                     d'extraire un type d'une valeur st_info.
+
+                     ELF32_ST_INFO(liaison,type) ou
+                     ELF64_ST_INFO(liaison,type) convertit un type et une
+                     liaison en une valeur st_info.
+
+           st_other  Ce champ contient actuellement zero et n'a pas de sens
+                     defini.
+
+           st_shndx  Chaque entree de la table des symboles est definie en
+                     relation a une section. Ce champ contient l'indice corre-
+                     spondant de la table des en-tetes de sections.
+
+     Le repositionnement est le processus consistant a relier des references
+     symboliques a des definitions symboliques. Les fichiers repositionnables
+     doivent contenir des informations decrivant comment modifier le contenu
+     de leurs sections, ce qui permet aux fichiers objets partages et executa-
+     bles de contenir les bonnes informations pour l'image memoire d'un pro-
+     gramme. Les entrees de repositionnement sont ces donnees.
+
+     Structures de repositionnement ne necessitant pas d'additif :
+
+           typedef struct {
+                   Elf32_Addr     r_offset;
+                   uint32_t       r_info;
+           } Elf32_Rel;
+
+           typedef struct {
+                   Elf64_Addr     r_offset;
+                   uint64_t       r_info;
+           } Elf64_Rel;
+
+     Structures de repositionnement necessitant un additif :
+
+           typedef struct {
+                   Elf32_Addr      r_offset;
+                   uint32_t        r_info;
+                   int32_t         r_addend;
+           } Elf32_Rela;
+
+           typedef struct {
+                   Elf64_Addr      r_offset;
+                   uint64_t        r_info;
+                   int64_t         r_addend;
+           } Elf64_Rela;
+
+           r_offset  Ce champ donne l'emplacement ou appliquer l'action de
+                     repositionnement. Pour un fichier repositionnable, sa
+                     valeur est le decalage en octets depuis le debut de la
+                     section jusqu'a l'unite de stockage affectee par le repo-
+                     sitionnement. Pour un fichier executable ou un objet
+                     partage, sa valeur est l'adresse virtuelle de l'unite de
+                     stockage affectee par le repositionnement.
+
+           r_info    Ce champ donne a la fois l'indice de la table des sym-
+                     boles par rapport auquel on doit effectuer le reposition-
+                     nement et le type de repositionnement a appliquer. Les
+                     types de repositionnement dependent du processeur.
+                     Lorsque le texte mentionne le type de repositionnement ou
+                     l'indice de la table des symboles d'une entree de reposi-
+                     tionnement, cela signifie le resultat de l'application de
+                     ELF_[32|64]_R_TYPE ou ELF[32|64]_R_SYM, respectivement,
+                     au champ r_info de cette entree.
+
+           r_addend  Ce champ indique un additif constant utilise pour cal-
+                     culer la valeur a enregistrer dans le champ reposi-
+                     tionnable.
+
+     La section .dynamic contient une serie de structures renfermant les
+     informations necessaires a la liaison dynamique. Le champ d_tag controle
+     l'interpretation de d_un.
+
+           typedef struct {
+                   Elf32_Sword     d_tag;
+                   union {
+                      Elf32_Word   d_val;
+                      Elf32_Addr   d_ptr;
+                   } d_un;
+           } Elf32_Dyn;
+           extern Elf32_Dyn _DYNAMIC[];
+
+           typedef struct {
+                   Elf64_Sxword    d_tag;
+                   union {
+                      Elf64_Xword  d_val;
+                      Elf64_Addr   d_ptr;
+                   } d_un;
+           } Elf64_Dyn;
+           extern Elf64_Dyn _DYNAMIC[];
+
+           d_tag  Ce champ peut avoir les valeurs suivantes :
+
+                  DT_NULL      Marque la fin de la section dynamique.
+
+                  DT_NEEDED    Decalage du nom d'une bibliotheque requise dans
+                               la table des chaines.
+
+                  DT_PLTRELSZ  Taille en octets des repositionnements de la
+                               table de liaison des procedures (PLT).
+
+                  DT_PLTGOT    Adresse de la table de liaison des procedures
+                               (PLT), de la table globale des decalages (GOT),
+                               ou des deux.
+
+                  DT_HASH      Adresse de la table de hachages des symboles.
+
+                  DT_STRTAB    Adresse de la table des chaines.
+
+                  DT_SYMTAB    Adresse de la table des symboles.
+
+                  DT_RELA      Adresse de la table des repositionnements avec
+                               additifs (Rela).
+
+                  DT_RELASZ    Taille en octets de la table des reposition-
+                               nements avec additifs.
+
+                  DT_RELAENT   Taille en octets d'une entree de la table des
+                               repositionnements avec additifs.
+
+                  DT_STRSZ     Taille en octets de la table des chaines.
+
+                  DT_SYMENT    Taille en octets d'une entree de la table des
+                               symboles.
+
+                  DT_INIT      Adresse de la fonction d'initialisation.
+
+                  DT_FINI      Adresse de la fonction de fin.
+
+                  DT_SONAME    Decalage du nom de l'objet partage dans la ta-
+                               ble des chaines.
+
+                  DT_RPATH     Decalage du chemin de recherche des bibliothe-
+                               ques dans la table des chaines (obsolete).
+
+                  DT_SYMBOLIC  Signale a l'editeur de lien de rechercher les
+                               symboles dans cet objet partage avant de les
+                               rechercher dans l'executable.
+
+                  DT_REL       Adresse de la table des repositionnements sans
+                               additif (Rel).
+
+                  DT_RELSZ     Taille en octets de la table des reposition-
+                               nements sans additif.
+
+                  DT_RELENT    Taille en octets d'une entree de la table des
+                               repositionnements sans additif.
+
+                  DT_PLTREL    Type de repositionnements auxquels la table de
+                               liaison des procedure (PLT) fait reference
+                               (avec ou sans additif).
+
+                  DT_DEBUG     Non defini, utilise pour le debogage.
+
+                  DT_TEXTREL   L'absence de cette valeur indique qu'aucun
+                               repositionnement ne doit etre applique a un
+                               segment en lecture seule.
+
+                  DT_JMPREL    Adresses des entrees de repositionnement
+                               reservees a la table de liaison des procedures
+                               (PLT).
+
+                  DT_BIND_NOW  Demande a l'editeur de liens dynamiques de
+                               traiter tous les repositionnements avant de
+                               transferer le controle a l'executable.
+
+                  DT_RUNPATH   Decalage du chemin de recherche des bibliothe-
+                               ques dans la table des chaines.
+
+                  DT_LOPROC    Debut des semantiques specifiques au pro-
+                               cesseur.
+
+                  DT_HIPROC    Fin des semantiques specifiques au processeur.
+
+           d_val  Ce champ represente des valeurs entieres ayant diverses
+                  interpretations.
+
+           d_ptr  Ce champ represente des adresses virtuelles du programme.
+                  Lors de l'interpretation de ces adresses, l'adresse reelle
+                  doit etre calculee a partir de la valeur du fichier original
+                  et de l'adresse de base en memoire. Les fichiers ne contien-
+                  nent pas d'entree de repositionnement pour corriger ces
+                  adresses.
+
+           _DYNAMIC
+                  Tableau contenant toutes les structures dynamiques de la
+                  section  .dynamic . Il est automatiquement rempli par l'edi-
+                  teur de liens.
+<br>&nbsp;<br></elf.h><div class="man_titre">
+VOIR AUSSI
+</div><br><br>     <a href="http://www.bash-linux.com/unix-man-as-francais.html">as(1)</a>, <a href="http://www.bash-linux.com/unix-man-gdb-francais.html">gdb(1)</a>, <a href="http://www.bash-linux.com/unix-man-ld-francais.html">ld(1)</a>, <a href="http://www.bash-linux.com/unix-man-objdump-francais.html">objdump(1)</a>, <a href="http://www.bash-linux.com/unix-man-execve-francais.html">execve(2)</a>, <a href="http://www.bash-linux.com/unix-man-core-francais.html">core(5)</a>
+
+     Hewlett-Packard, Elf-64 Object File Format.
+
+     Santa Cruz Operation, System V Application Binary Interface.
+
+     Unix System Laboratories, "Object Files", Executable and Linking Format
+     (ELF).
+<br>&nbsp;<br><div class="man_titre">
+HISTORIQUE
+</div><br><br>     La gestion du format ELF par OpenBSD est tout d'abord apparue dans
+     OpenBSD 1.2, bien qu'il n'ait pas ete utilise comme format de fichier
+     binaire natif par toutes les plates-formes compatibles. Le format ELF en
+     lui-meme est initialement apparu dans l'Unix Systeme V d'AT&amp;T. Le format
+     ELF est un standard reconnu.
+<br>&nbsp;<br><div class="man_titre">
+AUTEUR
+</div><br><br>     La version originale de cette page de manuel a ete ecrite par
+     Jeroen Ruigrok van der Werven <asmodai chez="" freebsd="" point="" org=""> en
+     s'inspirant de la page de manuel elf BSD/OS de BSDi.
+<br>&nbsp;<br></asmodai><div class="man_titre">
+TRADUCTION
+</div><br><br>     Ce document est une traduction realisee par Jean-Philippe Guerard
+     <fevrier chez="" tigreraye="" point="" org=""> le 14 decembre 2005 et revisee le
+     7 decembre 2006.
+
+     L'equipe de traduction a fait le maximum pour realiser une adaptation
+     francaise de qualite. La version anglaise la plus a jour de ce document
+     est toujours consultable via la commande :  LANG=C man 5 elf .  N'hesitez
+     pas a signaler a l'auteur ou au traducteur, selon le cas, toute erreur
+     dans cette page de manuel.
+
+
+
+LDP                             31 juillet 1999                         ELF(5)</fevrier></pre></pre>
+
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-1616791006614791";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "F1F1F1";
+google_color_bg = "5A89C0";
+google_color_link = "F1F1F1";
+google_color_url = "F1F1F1";
+google_color_text = "F1F1F1";
+google_ui_features = "rc:10";
+//--></script>
+<script style="display: none;" type="text/javascript" src="unix-man-elf-francais_files/show_ads.js">
+</script>
+<br>
+<br>
+</center>
+
+</td></tr>
+
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Dernières recherches</td></tr>
+<tr><td style="color: rgb(35, 74, 118); font-weight: normal;">
+<table border="0" cellpadding="3" cellspacing="2"><tbody><tr><td>
+</td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-elf.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-elf.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man elf en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-elf-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-elf-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man elf en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-df.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-df.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man df en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-df-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-df-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man df en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-ascii.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-ascii.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man ascii en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-ascii-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-ascii-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man ascii en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-kill.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-kill.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man kill en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-kill-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-kill-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man kill en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-date.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-date.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man date en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-date-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-date-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man date en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-brk.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-brk.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man brk en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-brk-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-brk-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man brk en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-cp.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-cp.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man cp en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-cp-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-cp-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man cp en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-sprintf.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-sprintf.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man sprintf en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-sprintf-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-sprintf-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man sprintf en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-dd.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-dd.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man dd en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-dd-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-dd-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man dd en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-intro.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-intro.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man intro en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-intro-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-intro-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man intro en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-passwd.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-passwd.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man passwd en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-passwd-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-passwd-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man passwd en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-environ.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-environ.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man environ en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-environ-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-environ-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man environ en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-strptime.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-strptime.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man strptime en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-strptime-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-strptime-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man strptime en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-tr.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-tr.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man tr en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-tr-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-tr-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man tr en français</a></td></tr><tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-endpwent.html"><img src="unix-man-elf-francais_files/man-en.gif" alt="Man  en anglais" border="0"></a> <a href="http://www.bash-linux.com/unix-man-endpwent.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man endpwent en anglais</a></td><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/unix-man-endpwent-francais.html"><img src="unix-man-elf-francais_files/man-fr.gif" alt="Man  en français" border="0"></a> <a href="http://www.bash-linux.com/unix-man-endpwent-francais.html" style="color: rgb(35, 74, 118); font-weight: bold;">Man endpwent en français</a></td></tr></tbody></table>
+<br>
+
+
+
+</td></tr>
+
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Recherche</td></tr>
+<tr><td style="color: rgb(35, 74, 118); font-weight: normal;">
+
+<form name="form" method="post" action="results.php" style="margin-top: 0pt; margin-bottom: 0pt;">
+<input name="recherche" style="width: 300px;" value="" type="text"><input value="Rechercher" type="submit">
+</form>
+<br>
+
+Dans ce moteur de recherche, vous pouvez taper directement votre besoin, en une phrase normale, humaine.<br>
+Exemple : vous cherchez comment remplacer un mot par un autre dans tous
+les fichiers d'un certain dossier. Vous pouvez écrire "Comment
+remplacer un mot par un autre dans tous les fichiers d'un dossier". Le
+moteur vous ramenera les résultats en fonction de leur pertinence.<br>Vous pouvez bien sûr ne chercher qu'un seul mot-clé, par exemple "find".
+
+</td></tr>
+
+</tbody></table>
+
+
+</td><td valign="top" width="180">
+
+
+
+
+
+
+
+
+
+
+
+<table style="border: 1px solid rgb(164, 192, 226);" bgcolor="#f1f1f1" border="0" cellpadding="2" cellspacing="5" width="100%">
+
+<tbody><tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Toutes les lignes de code</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/linux-bash-shell.html" style="color: rgb(35, 74, 118); font-weight: bold;">Par popularité</a></td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/bash-unix-shell-fonction.html" style="color: rgb(35, 74, 118); font-weight: bold;">Par fonction</a></td></tr>
+<!--tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href='linux-shell-ssh.html' style='color:#234A76;font-weight:bold'>Par complexité</a></td></tr-->
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/" style="color: rgb(35, 74, 118); font-weight: bold;">Recherche avancée</a></td></tr>
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Les logiciels SHELL/SSH</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/putty-ssh.html" style="color: rgb(35, 74, 118); font-weight: bold;">Putty</a></td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/astuces-bash.html" style="color: rgb(35, 74, 118); font-weight: bold;">Astuces Bash</a></td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/ssh-to-php.html" style="color: rgb(35, 74, 118); font-weight: bold;">Faire du SHELL avec PHP!</a></td></tr>
+
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;La doc officielle</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/doc-bash-man-francais.php" style="color: rgb(35, 74, 118); font-weight: bold;">Les man Linux en français</a></td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/doc-bash-man.php" style="color: rgb(35, 74, 118); font-weight: bold;">Les man Linux en anglais</a></td></tr>
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Proposer vos bash</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"' bgcolor="#ffcc00"><a href="http://www.bash-linux.com/ajout.php" style="color: rgb(35, 74, 118); font-weight: bold;" bgcolor="#FFCC00">Partagez vos lignes!</a></td></tr>
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Les requêtes</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"' bgcolor="#ffcc00"><a href="http://www.bash-linux.com/requete-serveur-dedie-linux.html" style="color: rgb(35, 74, 118); font-weight: bold;" bgcolor="#FFCC00">Déposer une requête</a></td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/repondre.php" style="color: rgb(35, 74, 118); font-weight: bold;" bgcolor="#FFCC00">Voir/répondre à une  requête</a></td></tr>
+
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Quelques sites interessants</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><a href="http://www.bash-linux.com/liens.html" style="color: rgb(35, 74, 118); font-weight: bold;">Bons sites pour apprendre</a></td></tr>
+
+<tr><td style="color: rgb(255, 255, 255); font-weight: bold;" bgcolor="#5a89c0">&nbsp;Rechercher</td></tr>
+<tr><td onmouseover='this.style.backgroundColor="#FFCC00"' onmouseout='this.style.backgroundColor="#F1F1F1"'><form name="form" method="post" action="results.php" style="margin-top: 0pt; margin-bottom: 0pt;">
+<input name="recherche" style="width: 120px;" type="text"><input value="OK" style="width: 30px;" type="submit">
+</form></td></tr>
+
+
+</tbody></table>
+
+<br>
+<center>
+<a href="http://www.xiti.com/xiti.asp?s=322983" title="WebAnalytics">
+<script type="text/javascript">
+<!--
+Xt_param = 's=322983&p=';
+try {Xt_r = top.document.referrer;}
+catch(e) {Xt_r = document.referrer; }
+Xt_h = new Date();
+Xt_i = '<img width="39" height="25" border="0" alt="" ';
+Xt_i += 'src="http://logv144.xiti.com/hit.xiti?'+Xt_param;
+Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+if(parseFloat(navigator.appVersion)>=4)
+{Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;}
+document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'" title="Internet Audience">');
+//-->
+</script><img style="display: none;" alt="" src="unix-man-elf-francais_files/hit.xiti" title="Internet Audience" border="0" height="25" width="39">
+<noscript>
+Mesure d'audience ROI statistique webanalytics par <img width="39"
+height="25" src="http://logv144.xiti.com/hit.xiti?s=322983&p="
+alt="WebAnalytics" />
+</noscript></a>
+</center>
+
+
+</td></tr></tbody></table>
+
+
+</body></html>
