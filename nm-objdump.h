@@ -5,11 +5,13 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 22 11:29:44 2008 caner candan
-** Last update Sat Mar 29 22:21:39 2008 caner candan
+** Last update Sat Mar 29 22:24:28 2008 caner candan
 */
 
 #ifndef __NM_OBJDUMP_H__
 # define __NM_OBJDUMP_H__
+
+# define FILE_DEFAULT	"a.out"
 
 # define NAME_NM	"nm"
 # define NAME_OD	"objdump"
