@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 22 11:29:44 2008 caner candan
-** Last update Sat Mar 29 22:24:28 2008 caner candan
+** Last update Sat Mar 29 23:26:05 2008 caner candan
 */
 
 #ifndef __NM_OBJDUMP_H__
@@ -17,6 +17,10 @@
 # define NAME_OD	"objdump"
 
 # define DUMP_NAME	"\n%s:\n"
+
+# define HEADER_FILE	"\n%s: \tfile format %s-%s-%s\n\n"
+
+# define CONTENTS_SCN	"Contents of section %s:\n"
 
 # define ERRMSG		"Error: %s\n"
 # define ERRFILE	"%s: %s: File format not recognized\n"

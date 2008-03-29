@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 29 22:01:22 2008 caner candan
-** Last update Sat Mar 29 22:17:06 2008 caner candan
+** Last update Sat Mar 29 23:25:11 2008 caner candan
 */
 
 #include "nm-objdump.h"
@@ -22,5 +22,6 @@ int		file_elf(void *buf, char *file, char *name)
       printf(ERRFILE, name, file);
       return (0);
     }
+  printf(
   return (1);
 }
