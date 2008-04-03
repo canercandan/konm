@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Thu Mar 27 17:26:49 2008 caner candan
-** Last update Sat Mar 29 21:54:23 2008 caner candan
+** Last update Sun Mar 30 22:07:34 2008 caner candan
 */
 
 #include "nm-objdump.h"
@@ -26,10 +26,10 @@ int		dump_scn(void *buf)
   for (i = 0; i < elf->e_shnum; i++)
     {
       scn = buf + elf->e_shoff + (elf->e_shentsize * i);
-      if (scn->sh_type != SHT_NULL)
-	printf("idx name: %d, name: %s, type: %d, offset: %08x, link: %d\n",
-	       scn->sh_name, strtab + scn->sh_name, scn->sh_type,
-	       scn->sh_offset, scn->sh_link);
+      if (dump_scn_rules(buf, scn, i))
+	continue;
+      printf(CONTENTS_SCN, strtab + scn->sh_name);
+      dump_scn_split(buf, scn);
     }
   return (1);
 }

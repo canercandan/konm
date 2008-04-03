@@ -5,14 +5,15 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 29 23:25:36 2008 caner candan
-** Last update Sat Mar 29 23:39:44 2008 caner candan
+** Last update Sat Mar 29 23:51:23 2008 caner candan
 */
 
 #ifndef __DESIGN_H__
 # define __DESIGN_H__
 
-# define ELF_32		"elf32"
-# define ELF_64		"elf64"
+# define CL_32		"elf32"
+# define CL_64		"elf64"
+# define CL_NONE	"unknown class"
 
 # define OS_NONE	"unix system v abi"
 # define OS_HPUX	"hp-ux operating system"

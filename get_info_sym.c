@@ -5,14 +5,14 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 29 13:47:06 2008 caner candan
-** Last update Sat Mar 29 21:22:12 2008 caner candan
+** Last update Sun Mar 30 17:13:41 2008 caner candan
 */
 
 #include "nm-objdump.h"
 #include <elf.h>
 #include <stdio.h>
 
-void		get_info_sym(void *tab)
+void		get_info_sym(void *s)
 {
   Elf32_Sym	*sym;
   int		info;
@@ -21,7 +21,7 @@ void		get_info_sym(void *tab)
   int		index;
   char		c;
 
-  sym = tab;
+  sym = s;
   info = sym->st_info;
   bind = ELF32_ST_BIND(info);
   type = ELF32_ST_TYPE(info);

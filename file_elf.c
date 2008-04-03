@@ -5,12 +5,13 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Sat Mar 29 22:01:22 2008 caner candan
-** Last update Sat Mar 29 23:25:11 2008 caner candan
+** Last update Sun Mar 30 00:53:55 2008 caner candan
 */
 
 #include "nm-objdump.h"
 #include <elf.h>
 #include <stdio.h>
+#include <string.h>
 
 int		file_elf(void *buf, char *file, char *name)
 {
@@ -22,6 +23,10 @@ int		file_elf(void *buf, char *file, char *name)
       printf(ERRFILE, name, file);
       return (0);
     }
-  printf(
+  if (!strcmp(name, NAME_OD))
+    printf(HEADER_FILE, file,
+	   get_class(elf->e_ident[EI_CLASS]),
+	   get_machine(elf->e_machine),
+	   get_os(elf->e_ident[EI_OSABI]));
   return (1);
 }
